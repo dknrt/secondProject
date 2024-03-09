@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=DynaPuff&family=Manrope&family=Pacifico&family=Truculenta:opsz,wght@12..72,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="block">
+        <h1 class="title">
+          <span class="left">С днем</span><span class="right">рождения!</span>
+        </h1>
+      </div>
+    </header>
+    <main>
+      <div class="logo">
+        <img src="./images/1.1.png" alt="1" class="img-logo" />
+        <img src="./images/7.7.png" alt="7" class="img-logo" />
+      </div>
+      <div class="gif">
+        <div class="adaptive-gif">
+          <img src="./images/ImXE.gif" alt="Leonardo" class="img-gif1" />
+          <img src="./images/M88u.gif" alt="Leonardo" class="img-gif2" />
+        </div>
+        <div class="personal-adaptive-gif">
+          <img src="./images/S5s.gif" alt="Leonardo" class="img-gif3" />
+        </div>
+      </div>
+    </main>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const logo = document.querySelector(".logo");
+        const gif = document.querySelector(".gif");
+        setTimeout(() => {
+          logo.classList.add("show");
+          logo.style.opacity = "1";
+          logo.style.transform = "translateY(50px)";
+          const opacityAnimation = logo.animate(
+            [{ opacity: 0 }, { opacity: 1 }],
+            { duration: 1000, easing: "ease-in-out" }
+          );
+          const translateYAnimation = logo.animate(
+            [
+              { transform: "translateY(400px)" },
+              { transform: "translateY(0)" },
+            ],
+            { duration: 1000, easing: "ease-in-out" }
+          );
+          opacityAnimation.play();
+          translateYAnimation.play();
+          setTimeout(() => {
+            gif.classList.add("show");
+            gif.style.opacity = "1";
+          }, 1000);
+        }, 3000);
+      });
+    </script>
+  </body>
+</html>
